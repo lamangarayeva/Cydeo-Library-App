@@ -20,12 +20,12 @@ public class LoginPage {
     @FindBy (id = "inputPassword")
     public WebElement password;
 
-    @FindBy (tagName = "button")
+    @FindBy (xpath = "//button[.='Sign in']")
     public WebElement signInButton;
 
-    public void login(){
-        email.sendKeys(ConfigurationReader.getProperty("librarian_email"));
-        password.sendKeys(ConfigurationReader.getProperty("librarian_password"));
+    public void login(String email, String password){
+        this.email.sendKeys(email);
+        this.password.sendKeys(password);
         signInButton.click();
     }
 
