@@ -23,6 +23,9 @@ public class LoginPage {
     @FindBy (xpath = "//button[.='Sign in']")
     public WebElement signInButton;
 
+    @FindBy (xpath = "//div//h2[.='9524']")
+    public WebElement numberOfUsers;
+
     public void login(String email, String password){
         this.email.sendKeys(email);
         this.password.sendKeys(password);

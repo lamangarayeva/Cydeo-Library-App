@@ -18,3 +18,10 @@ Feature: Library app login feature
     When user enters student username "student368@library"
     And user enters student password "GXGFyslS"
     Then user should see the dashboard
+
+  Scenario: Login as librarian same line
+    When user enters credentials using "librarian180@library" and "OTnz2koH"
+    Then user should see the dashboard
+    And there should be 9524 users
+
+

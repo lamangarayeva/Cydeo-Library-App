@@ -71,4 +71,17 @@ public class Login_StepDefinitions {
        loginPage.password.sendKeys(studentPassword);
        loginPage.signInButton.click();
     }
+
+    @When("user enters credentials using {string} and {string}")
+    public void user_enters_credentials_using_and(String username, String password) {
+        loginPage.email.sendKeys(username);
+        loginPage.password.sendKeys(password);
+        loginPage.signInButton.click();
+    }
+
+    @Then("there should be {int} users")
+    public void there_should_be(Integer expectedNumberOfUsers) {
+        Integer actualNumberOfUsers = Integer.parseInt(loginPage.numberOfUsers.getText());
+        Assert.assertEquals(expectedNumberOfUsers, actualNumberOfUsers);
+    }
 }
