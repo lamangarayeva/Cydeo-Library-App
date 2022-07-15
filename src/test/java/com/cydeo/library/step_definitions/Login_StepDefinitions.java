@@ -48,4 +48,27 @@ public class Login_StepDefinitions {
         loginPage.signInButton.click();
     }
 
+    // login with parameters
+
+    @When("user enters librarian username {string}")
+    public void user_enters_librarian_username(String librarianUsername) {
+       loginPage.email.sendKeys(librarianUsername);
+    }
+
+    @When("user enters librarian password {string}")
+    public void user_enters_librarian_password(String librarianPassword) {
+     loginPage.password.sendKeys(librarianPassword);
+     loginPage.signInButton.click();
+    }
+
+    @When("user enters student username {string}")
+    public void user_enters_student_username(String studentUsername) {
+        loginPage.email.sendKeys(studentUsername);
+    }
+
+    @When("user enters student password {string}")
+    public void user_enters_student_password(String studentPassword) {
+       loginPage.password.sendKeys(studentPassword);
+       loginPage.signInButton.click();
+    }
 }
