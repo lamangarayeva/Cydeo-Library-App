@@ -2,11 +2,11 @@ Feature: book categories
 
   @db
   Scenario: Verify book information with db
-    Given I am on the login page
-    And I login to application as a librarian
-    And I navigate to "Books" page
-    When I open book "Chordeiles minor"
-    Then book information must match the database for "Chordeiles minor"
+    #Given user is in the login page
+    #And user logins to application as a librarian
+    #And user navigates to "Books" page
+    #When user opens book "Chordeiles minor"
+    #Then book information must match the database for "Chordeiles minor"
 
   # create scenario outline
   # compare users , books and borrowed books

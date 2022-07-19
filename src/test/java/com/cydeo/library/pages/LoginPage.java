@@ -10,23 +10,20 @@ import java.lang.module.Configuration;
 
 public class LoginPage {
 
-    public LoginPage(){
+    public LoginPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy (id = "inputEmail")
+    @FindBy(id = "inputEmail")
     public WebElement email;
 
-    @FindBy (id = "inputPassword")
+    @FindBy(id = "inputPassword")
     public WebElement password;
 
-    @FindBy (xpath = "//button[.='Sign in']")
+    @FindBy(xpath = "//button[.='Sign in']")
     public WebElement signInButton;
 
-    @FindBy (xpath = "//h2[@id=\"user_count\"]")
-    public WebElement numberOfUsers;
-
-    public void login(String email, String password){
+    public void login(String email, String password) {
         this.email.sendKeys(email);
         this.password.sendKeys(password);
         signInButton.click();

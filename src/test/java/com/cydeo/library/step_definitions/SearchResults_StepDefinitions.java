@@ -1,6 +1,6 @@
 package com.cydeo.library.step_definitions;
 
-import com.cydeo.library.pages.DashboardPage;
+import com.cydeo.library.pages.BasePage;
 import com.cydeo.library.pages.UserManagementPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,12 +12,12 @@ import java.util.List;
 
 public class SearchResults_StepDefinitions {
 
-    DashboardPage dashboardPage = new DashboardPage();
+    BasePage basePage = new BasePage();
     UserManagementPage userManagementPage = new UserManagementPage();
 
     @Given("user clicks on {string} link")
     public void user_clicks_on_link(String link) {
-        dashboardPage.navigateTo(link);
+        basePage.navigateTo(link);
     }
 
     @Then("table should have following column names:")

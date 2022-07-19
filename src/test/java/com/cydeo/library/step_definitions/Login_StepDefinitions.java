@@ -1,21 +1,21 @@
 package com.cydeo.library.step_definitions;
 
+import com.cydeo.library.pages.BasePage;
 import com.cydeo.library.pages.DashboardPage;
 import com.cydeo.library.pages.LoginPage;
-import com.cydeo.library.utilities.BrowserUtils;
 import com.cydeo.library.utilities.ConfigurationReader;
 import com.cydeo.library.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Login_StepDefinitions {
 
     LoginPage loginPage = new LoginPage();
+    BasePage basePage = new BasePage();
     DashboardPage dashboardPage = new DashboardPage();
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
 
@@ -37,7 +37,7 @@ public class Login_StepDefinitions {
 
     @Then("user should see the dashboard")
     public void user_should_see_the_dashboard() {
-        Assert.assertTrue(dashboardPage.libraryIcon.isDisplayed());
+        Assert.assertTrue(basePage.libraryIcon.isDisplayed());
     }
 
     @When("user enters student username")
@@ -83,14 +83,14 @@ public class Login_StepDefinitions {
     @Then("there should be {int} users")
     public void there_should_be(Integer expectedNumberOfUsers) {
         wait.until(ExpectedConditions.urlToBe("https://library2.cydeo.com/#dashboard"));
-        wait.until(ExpectedConditions.visibilityOf(loginPage.numberOfUsers));
-        Integer actualNumberOfUsers = Integer.parseInt(loginPage.numberOfUsers.getText());
+
+        Integer actualNumberOfUsers = Integer.parseInt(dashboardPage.numberOfUsers.getText());
         Assert.assertEquals(expectedNumberOfUsers, actualNumberOfUsers);
     }
 
     @Then("account holder name should be {string}")
     public void account_holder_name_should_be(String expectedName) {
-        wait.until(ExpectedConditions.visibilityOf(dashboardPage.accountHolder));
-        Assert.assertEquals(expectedName, dashboardPage.accountHolder.getText());
+        wait.until(ExpectedConditions.visibilityOf(basePage.accountHolder));
+        Assert.assertEquals(expectedName, basePage.accountHolder.getText());
     }
 }
