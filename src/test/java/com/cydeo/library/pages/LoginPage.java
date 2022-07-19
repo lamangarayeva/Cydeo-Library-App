@@ -23,7 +23,7 @@ public class LoginPage {
     @FindBy (xpath = "//button[.='Sign in']")
     public WebElement signInButton;
 
-    @FindBy (xpath = "//div//h2[.='9524']")
+    @FindBy (xpath = "//h2[@id=\"user_count\"]")
     public WebElement numberOfUsers;
 
     public void login(String email, String password){

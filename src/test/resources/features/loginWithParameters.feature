@@ -7,19 +7,19 @@ Feature: Library app login feature
 
   @librarian @employee
   Scenario: Login as librarian
-    When user enters librarian username "librarian180@library"
-    And user enters librarian password "OTnz2koH"
+    When user enters librarian username "librarian1@library"
+    And user enters librarian password "qU9mrvur"
     Then user should see the dashboard
 
   @student
   Scenario: Login as student
-    When user enters student username "student368@library"
-    And user enters student password "GXGFyslS"
+    When user enters student username "student1@library"
+    And user enters student password "d5fv9BtX"
     Then user should see the dashboard
 
-  Scenario: Login as librarian same line
-    When user enters credentials using "librarian180@library" and "OTnz2koH"
+  Scenario: Login as librarian in the same same line
+    When user enters credentials using "librarian1@library" and "qU9mrvur"
     Then user should see the dashboard
-    And there should be 9524 users
+    And there should be 171 users
 
 

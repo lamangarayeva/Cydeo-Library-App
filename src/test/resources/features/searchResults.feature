@@ -1,10 +1,8 @@
 Feature: Library app search results verification
 
   User story:
-  As a user, I should be able to login as librarian. When I go to Users
-  page, table
+  As a user, I should be able to login as librarian. When I go to Users page, table
 
-  @wip
 Scenario: Table columns names
   Given user is on the login page
   And user enters librarian username
